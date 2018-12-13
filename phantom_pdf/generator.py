@@ -4,7 +4,11 @@ import logging
 from subprocess import Popen, STDOUT, PIPE
 import os
 import phantom_pdf_bin
-import urlparse
+import sys
+if sys.version_info < (3,0,0):
+    import urlparse
+else:
+    import urllib.parse
 import uuid
 
 from django.conf import settings
